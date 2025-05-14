@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Vinyl Player</title>
+  </head>
+  <body>
+    <h1>Spotify Vinyl Player</h1>
+    <button onclick="prevSong()">Previous</button>
+    <button id="playPauseBtn" onclick="togglePlayPause()">Play</button>
+    <button onclick="nextSong()">Next</button>
+    <img
+      id="albumArt"
+      style="display: none; width: 300px; height: auto; margin-top: 20px"
+    />
+    <p id="trackInfo" style="margin-top: 10px; font-weight: bold"></p>
+
+    <div id="status"></div>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script>
+      // Pass Python variables to JS
+      const uris = {{ uris | tojson }};
+      const token = "{{ token }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/player.js') }}"></script>
+  </body>
+</html>
